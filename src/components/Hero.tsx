@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowRight } from "lucide-react";
 import { Particles } from "./Particles";
+import { LightSpeedBackground } from "./LightSpeedBackground";
 
 export const Hero = () => {
   const [email, setEmail] = useState("");
@@ -15,15 +16,18 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-card" />
+      {/* Black Background */}
+      <div className="absolute inset-0 bg-background" />
+      
+      {/* Light Speed Streaks */}
+      <LightSpeedBackground />
       
       {/* Particles */}
       <Particles />
       
-      {/* Glow Effects */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[100px] animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[100px] animate-pulse delay-1000" />
+      {/* Subtle Glow Effects */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-foreground/5 rounded-full blur-[120px] animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-foreground/5 rounded-full blur-[120px] animate-pulse delay-1000" />
       
       <div className="relative z-10 max-w-5xl mx-auto text-center space-y-8">
         <div className="inline-block px-4 py-2 rounded-full border border-primary/30 bg-primary/5 mb-4">
