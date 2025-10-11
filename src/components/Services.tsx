@@ -35,7 +35,7 @@ const services = [
 
 export const Services = () => {
   return (
-    <section className="py-24 px-4 bg-white/5 border-y border-white/10">
+    <section className="py-24 px-4 bg-card border-y border-border">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">What we do</h2>
@@ -50,9 +50,9 @@ export const Services = () => {
             return (
               <div
                 key={index}
-                className="group relative p-8 rounded-2xl bg-white/5 border-2 border-white/20 hover:border-white/40 hover:bg-white/10 transition-all duration-300"
+                className="group relative p-8 rounded-2xl bg-card border-2 border-border hover:border-primary/50 hover:bg-card/80 transition-all duration-300"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
                 
                 <div className="relative z-10 space-y-4">
                   <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
