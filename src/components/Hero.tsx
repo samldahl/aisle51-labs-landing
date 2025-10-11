@@ -23,9 +23,9 @@ export const Hero = () => {
         </div>
         
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-mono font-bold tracking-tight">
-          Veteran commerce &<br />
+          Building future{" "}
           <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-gradient">
-            fulfillment builders
+            sh*t
           </span>
         </h1>
         
