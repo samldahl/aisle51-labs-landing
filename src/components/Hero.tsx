@@ -25,7 +25,7 @@ const HeroContent = memo(({
       </span>
     </h1>
     
-    <p className="text-xl md:text-2xl font-mono text-muted-foreground max-w-2xl mx-auto leading-relaxed">Less code, more results. We help you b</p>
+    <p className="text-xl md:text-2xl font-mono text-muted-foreground max-w-2xl mx-auto leading-relaxed">Less code, more results. We help you build in-h</p>
     
     <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mt-12">
       <Input type="email" placeholder="Enter your email" value={email} onChange={e => setEmail(e.target.value)} className="flex-1 h-12 bg-card border-border text-foreground placeholder:text-muted-foreground" required />
