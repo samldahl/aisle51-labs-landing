@@ -5,13 +5,15 @@ import { ArrowRight } from "lucide-react";
 import { StarfieldCanvas } from "./StarfieldCanvas";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-
-const HeroContent = memo(({ email, setEmail, handleSubmit }: { 
-  email: string; 
-  setEmail: (email: string) => void; 
+const HeroContent = memo(({
+  email,
+  setEmail,
+  handleSubmit
+}: {
+  email: string;
+  setEmail: (email: string) => void;
   handleSubmit: (e: React.FormEvent) => void;
-}) => (
-  <div className="relative z-10 max-w-5xl mx-auto text-center space-y-8">
+}) => <div className="relative z-10 max-w-5xl mx-auto text-center space-y-8">
     <div className="inline-block px-4 py-2 rounded-full border border-primary/30 bg-primary/5 mb-4">
       <p className="text-sm text-primary font-medium">Aisle 51 Labs</p>
     </div>
@@ -23,19 +25,10 @@ const HeroContent = memo(({ email, setEmail, handleSubmit }: {
       </span>
     </h1>
     
-    <p className="text-xl md:text-2xl font-mono text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-      Less code, more results. We help you get Series A–ready or profitable faster.
-    </p>
+    <p className="text-xl md:text-2xl font-mono text-muted-foreground max-w-2xl mx-auto leading-relaxed">Less code, more results. We help you b</p>
     
     <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mt-12">
-      <Input
-        type="email"
-        placeholder="Enter your email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className="flex-1 h-12 bg-card border-border text-foreground placeholder:text-muted-foreground"
-        required
-      />
+      <Input type="email" placeholder="Enter your email" value={email} onChange={e => setEmail(e.target.value)} className="flex-1 h-12 bg-card border-border text-foreground placeholder:text-muted-foreground" required />
       <Button type="submit" size="lg" className="h-12">
         Connect with us
         <ArrowRight className="ml-2 h-4 w-4" />
@@ -56,27 +49,22 @@ const HeroContent = memo(({ email, setEmail, handleSubmit }: {
         <span>Series A Readiness • Profitability</span>
       </div>
     </div>
-  </div>
-));
-
+  </div>);
 HeroContent.displayName = "HeroContent";
-
 export const Hero = () => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
-
   const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     try {
-      const { error } = await supabase
-        .from('contact_emails')
-        .insert([{ email }]);
-
+      const {
+        error
+      } = await supabase.from('contact_emails').insert([{
+        email
+      }]);
       if (error) throw error;
-
       toast.success("Thanks for connecting! We'll be in touch soon.");
       setEmail("");
     } catch (error) {
@@ -86,15 +74,9 @@ export const Hero = () => {
       setIsSubmitting(false);
     }
   }, [email]);
-
-  return (
-    <section 
-      ref={sectionRef} 
-      className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden"
-    >
+  return <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
       <StarfieldCanvas />
       
       <HeroContent email={email} setEmail={setEmail} handleSubmit={handleSubmit} />
-    </section>
-  );
+    </section>;
 };
