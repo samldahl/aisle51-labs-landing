@@ -37,15 +37,15 @@ const HeroContent = memo(({
     
     <div className="flex flex-wrap items-center justify-center gap-8 pt-12 text-sm text-muted-foreground">
       <div className="flex items-center gap-2">
-        <div className="w-2 h-2 rounded-full bg-foreground" />
+        <div className="w-2 h-2 rounded-full bg-primary" />
         <span>Commerce • Fulfillment • Ops</span>
       </div>
       <div className="flex items-center gap-2">
-        <div className="w-2 h-2 rounded-full bg-foreground" />
+        <div className="w-2 h-2 rounded-full bg-secondary" />
         <span>Design Systems • Product Engines</span>
       </div>
       <div className="flex items-center gap-2">
-        <div className="w-2 h-2 rounded-full bg-foreground" />
+        <div className="w-2 h-2 rounded-full bg-accent" />
         <span>Series A Readiness • Profitability</span>
       </div>
     </div>
