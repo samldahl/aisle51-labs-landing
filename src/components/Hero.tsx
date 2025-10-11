@@ -62,36 +62,6 @@ HeroContent.displayName = "HeroContent";
 export const Hero = () => {
   const [email, setEmail] = useState("");
   const sectionRef = useRef<HTMLElement>(null);
-  const rafRef = useRef<number>();
-
-  useEffect(() => {
-    let lastUpdate = 0;
-    const throttleMs = 16; // ~60fps
-
-    const handleMouseMove = (e: MouseEvent) => {
-      const now = Date.now();
-      if (now - lastUpdate < throttleMs) return;
-      
-      if (sectionRef.current) {
-        const rect = sectionRef.current.getBoundingClientRect();
-        if (e.clientY >= rect.top && e.clientY <= rect.bottom) {
-          lastUpdate = now;
-          
-          if (rafRef.current) cancelAnimationFrame(rafRef.current);
-          rafRef.current = requestAnimationFrame(() => {
-            sectionRef.current?.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
-            sectionRef.current?.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
-          });
-        }
-      }
-    };
-
-    window.addEventListener("mousemove", handleMouseMove, { passive: true });
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    };
-  }, []);
 
   const handleSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
@@ -102,16 +72,8 @@ export const Hero = () => {
     <section 
       ref={sectionRef} 
       className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden"
-      style={{ '--mouse-x': '0px', '--mouse-y': '0px' } as React.CSSProperties}
     >
       <StarfieldCanvas />
-      
-      <div 
-        className="absolute inset-0 pointer-events-none z-[5]"
-        style={{
-          background: 'radial-gradient(circle 400px at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.15), transparent 70%)',
-        }}
-      />
       
       <HeroContent email={email} setEmail={setEmail} handleSubmit={handleSubmit} />
     </section>

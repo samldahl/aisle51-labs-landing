@@ -4,10 +4,12 @@ import { TrackRecord } from "@/components/TrackRecord";
 import { FAQ } from "@/components/FAQ";
 import { CallToAction } from "@/components/CallToAction";
 import { Footer } from "@/components/Footer";
+import { CursorGlow } from "@/components/CursorGlow";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <CursorGlow />
       <Hero />
       <Services />
       <TrackRecord />
