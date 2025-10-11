@@ -13,10 +13,13 @@ export const Hero = () => {
     const handleMouseMove = (e: MouseEvent) => {
       if (sectionRef.current) {
         const rect = sectionRef.current.getBoundingClientRect();
-        setMousePosition({
-          x: e.clientX - rect.left,
-          y: e.clientY - rect.top,
-        });
+        // Only update position if mouse is within the hero section
+        if (e.clientY >= rect.top && e.clientY <= rect.bottom) {
+          setMousePosition({
+            x: e.clientX - rect.left,
+            y: e.clientY - rect.top,
+          });
+        }
       }
     };
 
