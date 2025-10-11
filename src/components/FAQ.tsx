@@ -34,34 +34,57 @@ const faqs = [
 
 export const FAQ = () => {
   return (
-    <section className="py-24 px-4 bg-white/5 border-y border-white/10">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-mono font-bold mb-4 text-foreground">
-            Frequently Asked Questions
+    <section className="relative py-32 px-4 bg-gradient-to-b from-background via-white/[0.02] to-background">
+      {/* Decorative top border */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+      
+      <div className="max-w-4xl mx-auto relative">
+        {/* Header with background glow */}
+        <div className="text-center mb-20 relative">
+          <div className="absolute inset-0 blur-3xl bg-white/[0.03] rounded-full" />
+          <h2 className="text-5xl md:text-6xl font-mono font-bold mb-6 text-white relative">
+            FAQ
           </h2>
-          <p className="text-xl text-muted-foreground font-mono">
+          <p className="text-xl text-white/60 font-mono relative">
             Everything you need to know about how we work
           </p>
         </div>
         
-        <Accordion type="single" collapsible className="space-y-4">
+        {/* FAQ Items with card design */}
+        <div className="space-y-6">
           {faqs.map((faq, index) => (
-            <AccordionItem 
-              key={index} 
-              value={`item-${index}`}
-              className="border-2 border-white/20 rounded-lg px-6 bg-white/5 hover:bg-white/10 hover:border-white/40 transition-all"
+            <div 
+              key={index}
+              className="relative group"
             >
-              <AccordionTrigger className="text-left font-mono text-lg text-white hover:text-white/80">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-white/70 font-mono leading-relaxed">
-                {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
+              {/* Card glow effect */}
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-white/10 via-white/5 to-white/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur" />
+              
+              {/* Card content */}
+              <div className="relative bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden backdrop-blur-sm hover:border-white/20 transition-all duration-300">
+                <Accordion type="single" collapsible>
+                  <AccordionItem value={`item-${index}`} className="border-none">
+                    <AccordionTrigger className="px-8 py-6 text-left font-mono text-lg text-white hover:text-white/90 hover:no-underline">
+                      <span className="flex items-start gap-4">
+                        <span className="text-white/40 font-bold min-w-[2rem]">0{index + 1}</span>
+                        <span>{faq.question}</span>
+                      </span>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-8 pb-6 text-white/70 font-mono leading-relaxed">
+                      <div className="pl-14">
+                        {faq.answer}
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </div>
+            </div>
           ))}
-        </Accordion>
+        </div>
       </div>
+      
+      {/* Decorative bottom border */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
     </section>
   );
 };
