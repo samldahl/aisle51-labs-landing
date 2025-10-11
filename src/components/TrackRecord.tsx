@@ -25,7 +25,7 @@ const stats = [
 
 export const TrackRecord = () => {
   return (
-    <section className="py-24 px-4 relative bg-white/5 border-y border-white/10">
+    <section className="py-24 px-4 relative bg-background">
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">

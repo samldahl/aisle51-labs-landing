@@ -52,10 +52,10 @@ export const FAQ = () => {
               value={`item-${index}`}
               className="border-2 border-white/20 rounded-lg px-6 bg-white/5 hover:bg-white/10 hover:border-white/40 transition-all"
             >
-              <AccordionTrigger className="text-left font-mono text-lg text-foreground hover:text-primary">
+              <AccordionTrigger className="text-left font-mono text-lg text-white hover:text-white/80">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground font-mono leading-relaxed">
+              <AccordionContent className="text-white/70 font-mono leading-relaxed">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
