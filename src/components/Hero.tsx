@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowRight } from "lucide-react";
 import { StarfieldCanvas } from "./StarfieldCanvas";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const HeroContent = memo(({ email, setEmail, handleSubmit }: { 
   email: string; 
@@ -35,7 +37,7 @@ const HeroContent = memo(({ email, setEmail, handleSubmit }: {
         required
       />
       <Button type="submit" size="lg" className="h-12">
-        Join Waitlist
+        Connect with us
         <ArrowRight className="ml-2 h-4 w-4" />
       </Button>
     </form>
@@ -61,11 +63,28 @@ HeroContent.displayName = "HeroContent";
 
 export const Hero = () => {
   const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
-  const handleSubmit = useCallback((e: React.FormEvent) => {
+  const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Email submitted:", email);
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase
+        .from('contact_emails')
+        .insert([{ email }]);
+
+      if (error) throw error;
+
+      toast.success("Thanks for connecting! We'll be in touch soon.");
+      setEmail("");
+    } catch (error) {
+      console.error("Error submitting email:", error);
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }, [email]);
 
   return (
