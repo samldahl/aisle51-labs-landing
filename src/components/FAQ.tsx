@@ -34,10 +34,10 @@ const faqs = [
 
 export const FAQ = () => {
   return (
-    <section className="py-24 px-4">
+    <section className="py-24 px-4 bg-white/5 border-y border-white/10">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-mono font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-mono font-bold mb-4 text-foreground">
             Frequently Asked Questions
           </h2>
           <p className="text-xl text-muted-foreground font-mono">
