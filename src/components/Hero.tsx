@@ -2,8 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowRight } from "lucide-react";
-import { Particles } from "./Particles";
-import { LightSpeedBackground } from "./LightSpeedBackground";
+import { StarfieldCanvas } from "./StarfieldCanvas";
 
 export const Hero = () => {
   const [email, setEmail] = useState("");
@@ -16,32 +15,21 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
-      {/* Black Background */}
-      <div className="absolute inset-0 bg-background" />
-      
-      {/* Light Speed Streaks */}
-      <LightSpeedBackground />
-      
-      {/* Particles */}
-      <Particles />
-      
-      {/* Subtle Glow Effects */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-foreground/5 rounded-full blur-[120px] animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-foreground/5 rounded-full blur-[120px] animate-pulse delay-1000" />
+      <StarfieldCanvas />
       
       <div className="relative z-10 max-w-5xl mx-auto text-center space-y-8">
         <div className="inline-block px-4 py-2 rounded-full border border-primary/30 bg-primary/5 mb-4">
           <p className="text-sm text-primary font-medium">Aisle 51 Labs</p>
         </div>
         
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-mono font-bold tracking-tight">
           Veteran commerce &<br />
           <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-gradient">
             fulfillment builders
           </span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+        <p className="text-xl md:text-2xl font-mono text-muted-foreground max-w-2xl mx-auto leading-relaxed">
           Less code, more results. We help you get Series A–ready or profitable faster.
         </p>
         
