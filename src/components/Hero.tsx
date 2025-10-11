@@ -7,12 +7,12 @@ import { StarfieldCanvas } from "./StarfieldCanvas";
 export const Hero = () => {
   const [email, setEmail] = useState("");
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const headingRef = useRef<HTMLHeadingElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      if (headingRef.current) {
-        const rect = headingRef.current.getBoundingClientRect();
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
         setMousePosition({
           x: e.clientX - rect.left,
           y: e.clientY - rect.top,
@@ -31,28 +31,26 @@ export const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
+    <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
       <StarfieldCanvas />
+      
+      {/* Mouse glow effect */}
+      <div 
+        className="absolute inset-0 pointer-events-none z-[5]"
+        style={{
+          background: `radial-gradient(circle 400px at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 0.15), transparent 70%)`,
+        }}
+      />
       
       <div className="relative z-10 max-w-5xl mx-auto text-center space-y-8">
         <div className="inline-block px-4 py-2 rounded-full border border-primary/30 bg-primary/5 mb-4">
           <p className="text-sm text-primary font-medium">Aisle 51 Labs</p>
         </div>
         
-        <h1 
-          ref={headingRef}
-          className="relative text-5xl md:text-7xl lg:text-8xl font-mono font-bold tracking-tight whitespace-nowrap"
-          style={{
-            background: `radial-gradient(circle 200px at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 0.3), transparent)`,
-            WebkitBackgroundClip: 'text',
-            backgroundClip: 'text',
-          }}
-        >
-          <span className="relative">
-            Building future{" "}
-            <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-gradient">
-              sh*t
-            </span>
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-mono font-bold tracking-tight">
+          Building future{" "}
+          <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-gradient">
+            sh*t
           </span>
         </h1>
         
