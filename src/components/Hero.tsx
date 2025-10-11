@@ -15,9 +15,9 @@ const HeroContent = memo(({ email, setEmail, handleSubmit }: {
     </div>
     
     <h1 className="text-5xl md:text-7xl lg:text-8xl font-mono font-bold tracking-tight">
-      Building future{" "}
+      Certified{" "}
       <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-gradient">
-        sh*t
+        Offshore Excellence
       </span>
     </h1>
     
