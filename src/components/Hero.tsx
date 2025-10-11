@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowRight } from "lucide-react";
@@ -6,6 +6,23 @@ import { StarfieldCanvas } from "./StarfieldCanvas";
 
 export const Hero = () => {
   const [email, setEmail] = useState("");
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const headingRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (headingRef.current) {
+        const rect = headingRef.current.getBoundingClientRect();
+        setMousePosition({
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top,
+        });
+      }
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,10 +39,20 @@ export const Hero = () => {
           <p className="text-sm text-primary font-medium">Aisle 51 Labs</p>
         </div>
         
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-mono font-bold tracking-tight">
-          Building future{" "}
-          <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-gradient">
-            sh*t
+        <h1 
+          ref={headingRef}
+          className="relative text-5xl md:text-7xl lg:text-8xl font-mono font-bold tracking-tight whitespace-nowrap"
+          style={{
+            background: `radial-gradient(circle 200px at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 0.3), transparent)`,
+            WebkitBackgroundClip: 'text',
+            backgroundClip: 'text',
+          }}
+        >
+          <span className="relative">
+            Building future{" "}
+            <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-gradient">
+              sh*t
+            </span>
           </span>
         </h1>
         
