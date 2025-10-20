@@ -76,6 +76,8 @@ const Index = () => {
           )}
         </div>
       </div>
+
+      <footer className="h-[20px] w-full" />
     </div>
   );
 };
