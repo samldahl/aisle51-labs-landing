@@ -1,4 +1,5 @@
 import { Mail, Linkedin, Twitter } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
@@ -15,12 +16,12 @@ export const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">Services</h4>
+            <h4 className="font-semibold mb-4">About</h4>
             <ul className="space-y-2 text-muted-foreground">
+              <li><Link to="/learn-more" className="hover:text-primary transition-colors">Learn More</Link></li>
               <li><a href="#" className="hover:text-primary transition-colors">Commerce Solutions</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Fulfillment Systems</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Operations</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Design Systems</a></li>
             </ul>
           </div>
           
