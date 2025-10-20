@@ -38,7 +38,7 @@ const Index = () => {
       
       <div 
         ref={containerRef}
-        className="relative z-10"
+        className="relative z-10 pt-[50vh]"
         style={{ minHeight: '120vh' }}
       >
         <div className="sticky top-0 min-h-screen flex flex-col items-center justify-center px-6 md:px-12">
