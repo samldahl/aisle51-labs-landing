@@ -37,7 +37,7 @@ const Index = () => {
       <CursorGlow />
       <StarfieldCanvas />
 
-      <div ref={containerRef} className="relative z-10 pt-[50vh]" style={{ minHeight: "120vh" }}>
+      <div ref={containerRef} className="relative z-10 pt-[50vh]" style={{ minHeight: "100vh" }}>
         <div className="sticky top-0 min-h-screen flex flex-col items-center justify-center px-6 md:px-12">
           <div className="max-w-6xl mx-auto">
             <h1 className="text-[2.75rem] md:text-[4.25rem] lg:text-[7rem] font-mono font-bold leading-[1.4] md:leading-[1.5] text-left">
@@ -69,7 +69,7 @@ const Index = () => {
           </div>
 
           {visibleWords >= words.length && (
-            <Link to="/learn-more" className="absolute bottom-20 animate-fade-in">
+            <Link to="/learn-more" className="mt-16 animate-fade-in">
               <Button variant="outline" size="lg" className="text-lg">
                 Learn More
               </Button>
