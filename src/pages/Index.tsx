@@ -7,7 +7,7 @@ const Index = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [visibleWords, setVisibleWords] = useState(0);
 
-  const text = "We believe the best ideas are inherently simple. In a world that celebrates complexity, true innovation stems from clarity. Every problem we've encountered traces back to one thing: miscommunication between vision and execution. We don't just build products. We rebuild product teams from the ground up, fusing design and engineering into a seamless whole. At a fraction of traditional costs. How? Through our global network of GenZ builders who speak the language of modern technology natively. We're not consultants. We're co-creators who understand that the future belongs to those who can simplify it.";
+  const text = "The best ideas are simple. Most problems stem from poor communication between vision and execution. We overhaul product teams—design and engineering bundled—at a fraction of traditional costs. Our global network of GenZ builders speaks modern technology natively. We're not consultants. We're co-creators simplifying the future.";
   
   const words = text.split(" ");
 
@@ -47,7 +47,7 @@ const Index = () => {
                   className={`inline-block mr-3 md:mr-4 transition-all duration-500 ${
                     index < visibleWords
                       ? "opacity-100 text-foreground"
-                      : "opacity-20 text-muted-foreground"
+                      : "opacity-0 text-muted-foreground"
                   }`}
                   style={{
                     transitionDelay: `${(index % 10) * 50}ms`,
