@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { CursorGlow } from "@/components/CursorGlow";
 import { StarfieldCanvas } from "@/components/StarfieldCanvas";
-import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 
 const Index = () => {
@@ -77,8 +76,6 @@ const Index = () => {
           )}
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 };
