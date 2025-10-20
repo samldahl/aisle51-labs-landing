@@ -41,9 +41,9 @@ const Index = () => {
         className="relative z-10"
         style={{ minHeight: '120vh' }}
       >
-        <div className="sticky top-0 min-h-screen flex flex-col items-center justify-center px-6 md:px-12 py-20">
+        <div className="sticky top-0 min-h-screen flex flex-col items-center justify-center px-6 md:px-12">
           <div className="max-w-6xl mx-auto">
-            <h1 className="text-4xl md:text-6xl lg:text-8xl font-mono font-bold leading-[1.4] md:leading-[1.5]">
+            <h1 className="text-4xl md:text-6xl lg:text-8xl font-mono font-bold leading-[1.4] md:leading-[1.5] text-center md:text-left">
               {words.map((word, index) => {
                 const isCurrent = index === visibleWords - 1;
                 const isPast = index < visibleWords - 1;
