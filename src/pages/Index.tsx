@@ -38,7 +38,8 @@ const Index = () => {
       
       <div 
         ref={containerRef}
-        className="relative z-10 min-h-[150vh]"
+        className="relative z-10"
+        style={{ minHeight: '120vh' }}
       >
         <div className="sticky top-0 min-h-screen flex flex-col items-center justify-center px-6 md:px-12 py-20">
           <div className="max-w-6xl mx-auto">
