@@ -41,7 +41,7 @@ const Index = () => {
         className="relative z-10 min-h-[120vh]"
       >
         <div className="sticky top-0 min-h-screen flex flex-col items-center justify-center px-6 md:px-12 py-20">
-          <div className="max-w-6xl mx-auto flex-1 flex items-center">
+          <div className="max-w-6xl mx-auto">
             <h1 className="text-4xl md:text-6xl lg:text-8xl font-mono font-bold leading-[1.4] md:leading-[1.5]">
               {words.map((word, index) => {
                 const isCurrent = index === visibleWords - 1;
@@ -71,7 +71,7 @@ const Index = () => {
           </div>
           
           {visibleWords >= words.length && (
-            <Link to="/learn-more" className="mt-8 animate-fade-in">
+            <Link to="/learn-more" className="absolute bottom-20 animate-fade-in">
               <Button variant="outline" size="lg" className="text-lg">
                 Learn More
               </Button>
