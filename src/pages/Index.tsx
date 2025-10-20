@@ -36,7 +36,7 @@ const Index = () => {
       <CursorGlow />
       <StarfieldCanvas />
 
-      <div ref={containerRef} className="relative z-10 pt-[50vh]" style={{ minHeight: "100vh" }}>
+      <div ref={containerRef} className="relative z-10 pt-[25vh]" style={{ minHeight: "100vh" }}>
         <div className="sticky top-0 min-h-screen flex flex-col items-center justify-center px-6 md:px-12">
           <div className="max-w-6xl mx-auto">
             <h1 className="text-[2.75rem] md:text-[4.25rem] lg:text-[7rem] font-mono font-bold leading-[1.4] md:leading-[1.5] text-left">
@@ -48,7 +48,7 @@ const Index = () => {
                 return (
                   <span
                     key={index}
-                    className={`inline-block mr-4 md:mr-6 mb-2 transition-all duration-700 ease-out ${
+                    className={`inline-block mr-4 md:mr-6 mb-2 transition-all duration-1000 ease-in-out ${
                       isCurrent
                         ? "opacity-100 text-foreground blur-0 scale-100"
                         : isPast
