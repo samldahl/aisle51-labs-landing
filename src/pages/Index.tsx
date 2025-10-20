@@ -36,7 +36,7 @@ const Index = () => {
       
       <div 
         ref={containerRef}
-        className="relative z-10 min-h-[400vh]"
+        className="relative z-10 min-h-[200vh]"
       >
         <div className="sticky top-0 min-h-screen flex items-center justify-center px-4 py-20">
           <div className="max-w-5xl mx-auto">
