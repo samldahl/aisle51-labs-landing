@@ -59,6 +59,13 @@ export const StarfieldCanvas = () => {
       const centerX = canvas.width / 2;
       const centerY = canvas.height / 2;
 
+      // Draw subtle A51 text
+      ctx.font = '120px "JetBrains Mono", monospace';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.015)';
+      ctx.fillText('A51', centerX, centerY);
+
       stars.forEach((star) => {
         star.z -= speed;
 
