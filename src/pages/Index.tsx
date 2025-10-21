@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { FAQ } from "@/components/FAQ";
 import { ContactForm } from "@/components/ContactForm";
 import { Award, TrendingUp, Shield } from "lucide-react";
+import { Services } from "@/components/Services";
 
 const Index = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -71,13 +72,6 @@ const Index = () => {
             </h1>
           </div>
 
-          {visibleWords >= words.length && (
-            <Link to="/learn-more" className="mt-16 animate-fade-in">
-              <Button variant="outline" size="lg" className="text-lg">
-                Learn More
-              </Button>
-            </Link>
-          )}
         </div>
       </div>
 
@@ -114,6 +108,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Services Section */}
+      <Services />
 
       {/* FAQ Section */}
       <FAQ />

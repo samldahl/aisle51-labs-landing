@@ -4,32 +4,32 @@ const services = [
   {
     icon: ShoppingCart,
     title: "Commerce",
-    description: "Build scalable e-commerce platforms that convert and grow with your business.",
+    description: "Build scalable e-commerce platforms that convert and grow with your business that range from enterprise stacks to MVPs processing millions of dollars.",
   },
   {
     icon: Package,
     title: "Fulfillment",
-    description: "Streamline operations with custom fulfillment solutions built for efficiency.",
+    description: "Streamline operations with custom fulfillment solutions built for your ground-teams' efficiency. We've built for entire orgs or black ops projects.",
   },
   {
     icon: Settings,
     title: "Operations",
-    description: "Optimize your workflows with purpose-built operational systems.",
+    description: "Optimize your workflows with purposeful SOPs that limit scope and improves KPIs within operational systems to increase accountability.",
   },
   {
     icon: Palette,
-    title: "Design Systems",
-    description: "Create cohesive, scalable design systems that accelerate development.",
+    title: "Engineering Systems",
+    description: "Create cohesive, scalable design systems that accelerate development and help you move deploy in weekly.",
   },
   {
     icon: Rocket,
     title: "Product Engines",
-    description: "Ship faster with reusable product frameworks and component libraries.",
+    description: "Ship faster with reusable product frameworks and libraries that move the needle.",
   },
   {
     icon: TrendingUp,
     title: "Series A Readiness",
-    description: "Get investment-ready with robust infrastructure and proven metrics.",
+    description: "Get investment ready with robust infrastructure and clear understanding of metrics.",
   },
 ];
 
