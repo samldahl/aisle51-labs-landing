@@ -8,9 +8,11 @@ import { ContactForm } from "@/components/ContactForm";
 import { Award, TrendingUp, Shield } from "lucide-react";
 import { Services } from "@/components/Services";
 import { useInView } from "@/hooks/use-in-view";
+import backgroundMusic from "@/assets/SimonBGSmall.mp3";
 
 const Index = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
   const [visibleWords, setVisibleWords] = useState(0);
   const [contactFormOpen, setContactFormOpen] = useState(false);
   
@@ -23,6 +25,12 @@ const Index = () => {
     "We bridge the gap between vision and execution. Product clarity, modern engineering, global builders — all at a fraction of traditional cost.";
 
   const words = text.split(" ");
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = 0.2;
+    }
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,6 +52,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <audio ref={audioRef} autoPlay loop style={{ display: 'none' }}>
+        <source src={backgroundMusic} type="audio/mpeg" />
+      </audio>
       <CursorGlow />
       <StarfieldCanvas />
 
