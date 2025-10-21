@@ -61,9 +61,9 @@ const Index = () => {
                     key={index}
                     className={`inline-block mr-4 md:mr-6 mb-2 transition-all duration-1000 ease-in-out ${
                       isCurrent
-                        ? "opacity-100 text-foreground blur-0 scale-100"
+                        ? "opacity-100 text-white blur-0 scale-100"
                         : isPast
-                          ? "opacity-40 text-muted-foreground blur-0 scale-100"
+                          ? "opacity-40 text-white blur-0 scale-100"
                           : "opacity-0 text-muted-foreground blur-sm scale-95"
                     }`}
                     style={{
