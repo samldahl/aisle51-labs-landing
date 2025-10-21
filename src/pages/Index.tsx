@@ -4,11 +4,13 @@ import { CursorGlow } from "@/components/CursorGlow";
 import { StarfieldCanvas } from "@/components/StarfieldCanvas";
 import { Button } from "@/components/ui/button";
 import { FAQ } from "@/components/FAQ";
+import { ContactForm } from "@/components/ContactForm";
 import { Award, TrendingUp, Shield } from "lucide-react";
 
 const Index = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [visibleWords, setVisibleWords] = useState(0);
+  const [contactFormOpen, setContactFormOpen] = useState(false);
 
   const text =
     "The best ideas are simple. Most problems stem from poor communication between vision and execution. We get product on track and bundle engineering  at a fraction of traditional costs. Our global network of GenZ builders speak modern enterprise technology frameworks. We're not consultants. We're here to help.";
@@ -128,9 +130,10 @@ const Index = () => {
               <p className="text-xl text-white/60 font-mono mb-8">
                 Let's ship something great together
               </p>
-              <Button size="lg" className="text-lg">
+              <Button size="lg" className="text-lg" onClick={() => setContactFormOpen(true)}>
                 Contact Us
               </Button>
+              <ContactForm open={contactFormOpen} onOpenChange={setContactFormOpen} />
             </div>
           </div>
         </div>
