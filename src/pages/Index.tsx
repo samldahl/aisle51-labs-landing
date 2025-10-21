@@ -44,7 +44,7 @@ const Index = () => {
       <div ref={containerRef} className="relative z-10 pt-[100vh]" style={{ minHeight: "100vh" }}>
         <div className="sticky top-0 min-h-screen flex flex-col items-center justify-center px-6 md:px-12">
           <div className="max-w-6xl mx-auto">
-            <h1 className="text-[2.75rem] md:text-[4.25rem] lg:text-[7rem] font-mono font-bold leading-[1.4] md:leading-[1.5] text-left">
+            <h1 className="text-[2.475rem] md:text-[3.825rem] lg:text-[6.3rem] font-mono font-bold leading-[1.4] md:leading-[1.5] text-left">
               {words.map((word, index) => {
                 const isCurrent = index === visibleWords - 1;
                 const isPast = index < visibleWords - 1;
@@ -75,9 +75,13 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Credentials Section */}
+      {/* Track Record Section */}
       <section className="relative z-10 py-24 px-4 bg-gradient-to-b from-background via-white/[0.01] to-background">
         <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-mono font-bold text-white mb-4">Track record</h2>
+            <p className="text-xl text-white/60 font-mono">Built for scale, proven in production</p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="group relative">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-white/5 via-white/10 to-white/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur" />
@@ -101,8 +105,8 @@ const Index = () => {
               <div className="absolute -inset-0.5 bg-gradient-to-r from-white/5 via-white/10 to-white/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur" />
               <div className="relative bg-white/[0.02] border border-white/10 rounded-xl p-8 backdrop-blur-sm hover:border-white/20 transition-all duration-300">
                 <Shield className="w-10 h-10 text-white/60 mb-4" />
-                <h3 className="text-2xl font-mono font-bold text-white mb-2">SOC 2</h3>
-                <p className="text-white/60 font-mono">Enterprise-grade security</p>
+                <h3 className="text-2xl font-mono font-bold text-white mb-2">Millions</h3>
+                <p className="text-white/60 font-mono">Processed in transactions</p>
               </div>
             </div>
           </div>
