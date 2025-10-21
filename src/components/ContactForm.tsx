@@ -23,7 +23,7 @@ export const ContactForm = ({ open, onOpenChange }: ContactFormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const webhookUrl = "https://samldahl.app.n8n.cloud/webhook/f58e9ea3-0420-4b61-b22f-7a547e4bc8cb";
+  const webhookUrl = "https://samldahl.app.n8n.cloud/webhook-test/f58e9ea3-0420-4b61-b22f-7a547e4bc8cb";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
