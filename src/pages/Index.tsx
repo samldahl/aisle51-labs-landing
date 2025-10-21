@@ -7,11 +7,17 @@ import { FAQ } from "@/components/FAQ";
 import { ContactForm } from "@/components/ContactForm";
 import { Award, TrendingUp, Shield } from "lucide-react";
 import { Services } from "@/components/Services";
+import { useInView } from "@/hooks/use-in-view";
 
 const Index = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [visibleWords, setVisibleWords] = useState(0);
   const [contactFormOpen, setContactFormOpen] = useState(false);
+  
+  const trackRecordSection = useInView();
+  const servicesSection = useInView();
+  const faqSection = useInView();
+  const ctaSection = useInView();
 
   const text =
     "The best ideas are simple. Most problems stem from poor communication between vision and execution. We get product on track and bundle engineering  at a fraction of traditional costs. Our global network of GenZ builders speak modern enterprise technology frameworks. We're not consultants. We're here to help.";
@@ -76,7 +82,12 @@ const Index = () => {
       </div>
 
       {/* Track Record Section */}
-      <section className="relative z-10 py-24 px-4 bg-gradient-to-b from-background via-white/[0.01] to-background">
+      <section 
+        ref={trackRecordSection.ref as React.RefObject<HTMLElement>}
+        className={`relative z-10 py-24 px-4 bg-gradient-to-b from-background via-white/[0.01] to-background transition-all duration-1000 ${
+          trackRecordSection.isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-mono font-bold text-white mb-4">Track record</h2>
@@ -114,13 +125,32 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <Services />
+      <div 
+        ref={servicesSection.ref as React.RefObject<HTMLDivElement>}
+        className={`transition-all duration-1000 ${
+          servicesSection.isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
+        <Services />
+      </div>
 
       {/* FAQ Section */}
-      <FAQ />
+      <div 
+        ref={faqSection.ref as React.RefObject<HTMLDivElement>}
+        className={`transition-all duration-1000 ${
+          faqSection.isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
+        <FAQ />
+      </div>
 
       {/* Contact CTA */}
-      <section className="relative z-10 py-24 px-4">
+      <section 
+        ref={ctaSection.ref as React.RefObject<HTMLElement>}
+        className={`relative z-10 py-24 px-4 transition-all duration-1000 ${
+          ctaSection.isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
         <div className="max-w-2xl mx-auto text-center">
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-white/10 via-white/20 to-white/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
