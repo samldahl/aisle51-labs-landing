@@ -21,20 +21,12 @@ export const ContactForm = ({ open, onOpenChange }: ContactFormProps) => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [webhookUrl, setWebhookUrl] = useState("");
   const { toast } = useToast();
+
+  const webhookUrl = "https://samldahl.app.n8n.cloud/webhook/f58e9ea3-0420-4b61-b22f-7a547e4bc8cb";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (!webhookUrl) {
-      toast({
-        title: "Setup Required",
-        description: "Please enter your N8N webhook URL first",
-        variant: "destructive",
-      });
-      return;
-    }
 
     setIsSubmitting(true);
 
@@ -85,19 +77,6 @@ export const ContactForm = ({ open, onOpenChange }: ContactFormProps) => {
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4 mt-4">
-          <div className="space-y-2">
-            <Label htmlFor="webhook" className="text-sm font-mono text-foreground">
-              N8N Webhook URL (setup)
-            </Label>
-            <Input
-              id="webhook"
-              type="url"
-              placeholder="https://your-n8n-webhook-url"
-              value={webhookUrl}
-              onChange={(e) => setWebhookUrl(e.target.value)}
-              className="bg-background/50 border-white/10 font-mono"
-            />
-          </div>
           <div className="space-y-2">
             <Label htmlFor="name" className="text-sm font-mono text-foreground">
               Name
