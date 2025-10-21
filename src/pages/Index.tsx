@@ -30,13 +30,25 @@ const Index = () => {
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.volume = 0.2;
+      // Try to play the audio, handling browser autoplay restrictions
+      audioRef.current.play().catch(() => {
+        // If autoplay is blocked, mute initially and user can unmute
+        setIsMuted(true);
+        audioRef.current!.muted = true;
+      });
     }
   }, []);
 
   const toggleMute = () => {
     if (audioRef.current) {
-      audioRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
+      const newMutedState = !isMuted;
+      audioRef.current.muted = newMutedState;
+      setIsMuted(newMutedState);
+      
+      // Ensure audio is playing when unmuting
+      if (!newMutedState && audioRef.current.paused) {
+        audioRef.current.play().catch(console.error);
+      }
     }
   };
 
