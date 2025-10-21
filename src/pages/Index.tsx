@@ -20,7 +20,7 @@ const Index = () => {
   const ctaSection = useInView();
 
   const text =
-    "The best ideas are simple. Most problems stem from poor communication between vision and execution. We get product on track and bundle engineering  at a fraction of traditional costs. Our global network of builders speak modern enterprise technology frameworks.";
+    "We bridge the gap between vision and execution. Product clarity, modern engineering, global builders — all at a fraction of traditional cost.";
 
   const words = text.split(" ");
 
