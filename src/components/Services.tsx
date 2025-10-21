@@ -4,22 +4,26 @@ const services = [
   {
     icon: ShoppingCart,
     title: "Commerce",
-    description: "Build scalable e-commerce platforms that convert and grow with your business that range from enterprise stacks to MVPs processing millions of dollars.",
+    description:
+      "Build scalable e-commerce platforms that convert and grow with your business that range from enterprise stacks to MVPs processing millions of dollars.",
   },
   {
     icon: Package,
     title: "Fulfillment",
-    description: "Streamline operations with custom fulfillment solutions built for your ground-teams' efficiency. We've built for entire orgs or black ops projects.",
+    description:
+      "Streamline operations with custom fulfillment solutions built for your ground-teams' efficiency. We've built for entire orgs or black ops projects.",
   },
   {
     icon: Settings,
     title: "Operations",
-    description: "Optimize your workflows with purposeful SOPs that limit scope and improves KPIs within operational systems to increase accountability.",
+    description:
+      "Optimize your workflows with purposeful SOPs that limit scope and improves KPIs within operational systems to increase accountability.",
   },
   {
     icon: Palette,
     title: "Engineering Systems",
-    description: "Create cohesive, scalable design systems that accelerate development and help you move deploy in weekly.",
+    description:
+      "Create cohesive, scalable design systems that accelerate development and help you move deploy weekly.",
   },
   {
     icon: Rocket,
@@ -43,7 +47,7 @@ export const Services = () => {
             End-to-end solutions for modern commerce and fulfillment
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
@@ -53,16 +57,14 @@ export const Services = () => {
                 className="group relative p-8 rounded-2xl bg-card border-2 border-border hover:border-primary/50 hover:bg-card/80 transition-all duration-300"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                
+
                 <div className="relative z-10 space-y-4">
                   <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Icon className="w-7 h-7 text-primary" />
                   </div>
-                  
+
                   <h3 className="text-2xl font-bold">{service.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {service.description}
-                  </p>
+                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
                 </div>
               </div>
             );
