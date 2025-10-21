@@ -59,15 +59,15 @@ const Index = () => {
                 return (
                   <span
                     key={index}
-                    className={`inline-block mr-4 md:mr-6 mb-2 transition-all duration-1000 ease-in-out ${
+                    className={`inline-block mr-4 md:mr-6 mb-2 transition-all duration-500 ease-in-out ${
                       isCurrent
                         ? "opacity-100 text-white blur-0 scale-100"
                         : isPast
-                          ? "opacity-40 text-white blur-0 scale-100"
+                          ? "opacity-70 text-white blur-0 scale-100"
                           : "opacity-0 text-muted-foreground blur-sm scale-95"
                     }`}
                     style={{
-                      transitionDelay: `${(index % 8) * 40}ms`,
+                      transitionDelay: `${index * 15}ms`,
                       textShadow: isCurrent ? "0 0 20px rgba(255, 255, 255, 0.15)" : "none",
                     }}
                   >
