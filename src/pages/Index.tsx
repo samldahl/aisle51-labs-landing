@@ -16,7 +16,7 @@ const Index = () => {
   const [visibleWords, setVisibleWords] = useState(0);
   const [contactFormOpen, setContactFormOpen] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
-  
+
   const trackRecordSection = useInView();
   const servicesSection = useInView();
   const faqSection = useInView();
@@ -44,7 +44,7 @@ const Index = () => {
       const newMutedState = !isMuted;
       audioRef.current.muted = newMutedState;
       setIsMuted(newMutedState);
-      
+
       // Ensure audio is playing when unmuting
       if (!newMutedState && audioRef.current.paused) {
         audioRef.current.play().catch(console.error);
@@ -72,7 +72,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <audio ref={audioRef} autoPlay loop style={{ display: 'none' }}>
+      <audio ref={audioRef} autoPlay loop style={{ display: "none" }}>
         <source src={backgroundMusic} type="audio/mpeg" />
       </audio>
       <CursorGlow />
@@ -108,12 +108,11 @@ const Index = () => {
               })}
             </h1>
           </div>
-
         </div>
       </div>
 
       {/* Track Record Section */}
-      <section 
+      <section
         ref={trackRecordSection.ref as React.RefObject<HTMLElement>}
         className={`relative z-10 py-24 px-4 bg-gradient-to-b from-background via-white/[0.01] to-background transition-all duration-1000 ${
           trackRecordSection.isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -129,26 +128,26 @@ const Index = () => {
               <div className="absolute -inset-0.5 bg-gradient-to-r from-white/5 via-white/10 to-white/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur" />
               <div className="relative bg-white/[0.02] border border-white/10 rounded-xl p-8 backdrop-blur-sm hover:border-white/20 transition-all duration-300">
                 <Award className="w-10 h-10 text-white/60 mb-4" />
-                <h3 className="text-2xl font-mono font-bold text-white mb-2">Techstars</h3>
-                <p className="text-white/60 font-mono">Alumni of world's top accelerator</p>
+                <h3 className="text-2xl font-mono font-bold text-white mb-2">Techstars Alumni</h3>
+                <p className="text-white/60 font-mono">We are Alumni of world's top startup accelerator</p>
               </div>
             </div>
-            
+
             <div className="group relative">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-white/5 via-white/10 to-white/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur" />
               <div className="relative bg-white/[0.02] border border-white/10 rounded-xl p-8 backdrop-blur-sm hover:border-white/20 transition-all duration-300">
                 <TrendingUp className="w-10 h-10 text-white/60 mb-4" />
-                <h3 className="text-2xl font-mono font-bold text-white mb-2">$13M Raised</h3>
-                <p className="text-white/60 font-mono">Venture-backed and scaling</p>
+                <h3 className="text-2xl font-mono font-bold text-white mb-2">$13 Million Raised</h3>
+                <p className="text-white/60 font-mono">Our venture-backed team knows the steps</p>
               </div>
             </div>
-            
+
             <div className="group relative">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-white/5 via-white/10 to-white/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur" />
               <div className="relative bg-white/[0.02] border border-white/10 rounded-xl p-8 backdrop-blur-sm hover:border-white/20 transition-all duration-300">
                 <Shield className="w-10 h-10 text-white/60 mb-4" />
-                <h3 className="text-2xl font-mono font-bold text-white mb-2">Millions</h3>
-                <p className="text-white/60 font-mono">Processed in transactions</p>
+                <h3 className="text-2xl font-mono font-bold text-white mb-2">Zero to Millions</h3>
+                <p className="text-white/60 font-mono">We measure the right data a million ways</p>
               </div>
             </div>
           </div>
@@ -156,7 +155,7 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <div 
+      <div
         ref={servicesSection.ref as React.RefObject<HTMLDivElement>}
         className={`transition-all duration-1000 ${
           servicesSection.isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -166,7 +165,7 @@ const Index = () => {
       </div>
 
       {/* FAQ Section */}
-      <div 
+      <div
         ref={faqSection.ref as React.RefObject<HTMLDivElement>}
         className={`transition-all duration-1000 ${
           faqSection.isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -176,7 +175,7 @@ const Index = () => {
       </div>
 
       {/* Contact CTA */}
-      <section 
+      <section
         ref={ctaSection.ref as React.RefObject<HTMLElement>}
         className={`relative z-10 py-24 px-4 transition-all duration-1000 ${
           ctaSection.isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -186,12 +185,8 @@ const Index = () => {
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-white/10 via-white/20 to-white/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
             <div className="relative bg-white/[0.03] border border-white/10 rounded-2xl p-12 backdrop-blur-sm">
-              <h2 className="text-4xl md:text-5xl font-mono font-bold text-white mb-6">
-                Ready to build?
-              </h2>
-              <p className="text-xl text-white/60 font-mono mb-8">
-                Let's ship something great together
-              </p>
+              <h2 className="text-4xl md:text-5xl font-mono font-bold text-white mb-6">Ready to build?</h2>
+              <p className="text-xl text-white/60 font-mono mb-8">Let's ship something great together</p>
               <Button size="lg" className="text-lg" onClick={() => setContactFormOpen(true)}>
                 Contact Us
               </Button>
